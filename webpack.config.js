@@ -1,4 +1,4 @@
-const path= require('path');
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtracPlugin = require('mini-css-extract-plugin');
@@ -7,7 +7,7 @@ const loader = require('sass-loader');
 
 module.exports = {
     entry: {
-        'app':              './src/index.js',
+        'app': './src/index.js',
         'assets/js/banner': './src/assets/js/banner.js',
     },
     output: {
@@ -36,10 +36,10 @@ module.exports = {
                 test: /\.m?js$/,
                 exclude: /node_modules/,
                 use: {
-                  loader: "babel-loader",
-                  options: {
-                    presets: ['@babel/preset-env']
-                  }
+                    loader: "babel-loader",
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
                 }
             },
             {
@@ -64,12 +64,19 @@ module.exports = {
                     }
                 ]
             },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/images/[name][ext]'
+                }
+            }
         ]
     },
 
     optimization: {
         minimizer: [
-          new CssMinimizerPlugin(),
+            new CssMinimizerPlugin(),
         ],
     },
 
@@ -99,12 +106,22 @@ module.exports = {
             filename: "components/card.html",
             template: "./src/components/card.html",
             chunks: ['app']
-        })
-,
+        }),
         new HtmlWebpackPlugin({
             filename: "components/banner.html",
             template: "./src/components/banner.html",
             chunks: ['app', 'assets/js/banner']
+        }),
+        new HtmlWebpackPlugin({
+            filename: "components/list.html",
+            template: "./src/components/list.html",
+            chunks: ['app']
+        })
+,
+        new HtmlWebpackPlugin({
+            filename: "components/tabs.html",
+            template: "./src/components/tabs.html",
+            chunks: ['app']
         })
     ]
 }
