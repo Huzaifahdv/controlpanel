@@ -33,6 +33,7 @@ fs.readFile("./src/components/template.html", "utf8", (err, source) => {
                     const pluginEntry = `        new HtmlWebpackPlugin({\n` +
                                         `            filename: "components/${component}.html",\n` +
                                         `            template: "./src/components/${component}.html",\n` +
+                                        `            chunks: ['app'] \n` +
                                         `        })`;
 
                     // ✅ التحقق مما إذا كان المكون مضافًا مسبقًا لمنع التكرار
