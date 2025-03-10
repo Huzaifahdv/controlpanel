@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtracPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const loader = require('sass-loader');
+const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 
 module.exports = {
     entry: {
@@ -93,7 +93,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: "index.html",
             template: "./src/index.html",
-            chunks: ['app']
+            chunks: ['app', 'assets/js/banner', 'assets/js/chart', 'assets/js/tabs']
         }),
         new HtmlWebpackPlugin({
             filename: "components/button.html",
@@ -144,8 +144,7 @@ module.exports = {
             filename: "components/actions.html",
             template: "./src/components/actions.html",
             chunks: ['app'] 
-        })
-,
+        }),
         new HtmlWebpackPlugin({
             filename: "components/sidebar.html",
             template: "./src/components/sidebar.html",
@@ -160,6 +159,37 @@ module.exports = {
             filename: "components/chart.html",
             template: "./src/components/chart.html",
             chunks: ['app', 'assets/js/chart'] 
+        }),
+
+        new HtmlWebpackPartialsPlugin({
+            path: path.join(__dirname, './src/components/sidebar.html'),
+            location: 'sidebar',
+            template__filename: ['index.html'],
+        }),
+        new HtmlWebpackPartialsPlugin({
+            path: path.join(__dirname, './src/components/actions.html'),
+            location: 'actions',
+            template__filename: ['index.html'],
+        }),
+        new HtmlWebpackPartialsPlugin({
+            path: path.join(__dirname, './src/components/banner.html'),
+            location: 'banner',
+            template__filename: ['index.html'],
+        }),
+        new HtmlWebpackPartialsPlugin({
+            path: path.join(__dirname, './src/components/chart.html'),
+            location: 'chart',
+            template__filename: ['index.html'],
+        }),
+        new HtmlWebpackPartialsPlugin({
+            path: path.join(__dirname, './src/components/tabs.html'),
+            location: 'tabs',
+            template__filename: ['index.html'],
+        }),
+        new HtmlWebpackPartialsPlugin({
+            path: path.join(__dirname, './src/components/help.html'),
+            location: 'help',
+            template__filename: ['index.html'],
         })
     ]
 }
