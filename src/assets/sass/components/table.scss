@@ -8,18 +8,17 @@ $product-media-size: 40px;
 
 .c-table__header {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     margin-bottom: spacing('small');
     padding: 0 spacing('normal');
     flex-wrap: wrap;
 }
 
 .c-table__navigation {
-    // margin-right: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: spacing('normal'); //
+    margin-top: spacing();
 }
 
 .c-table__navigation__caption {
@@ -28,7 +27,6 @@ $product-media-size: 40px;
 
 .c-table__actions {
     margin-left: auto;
-    padding-top: spacing('normal'); //
 }
 
 .c-table__navigation__arrows {
@@ -50,11 +48,7 @@ $product-media-size: 40px;
         text-align: right;
     }
     th, td {
-        &:first-child{
-            padding-right: spacing('normal');
-            width: 75px;
-        }
-        padding: spacing('extra-small');
+        padding: spacing('extra-small') 0;
         border-bottom: 1px solid rgba(darken(white, 40%), 0.15);
         img {
             width: $product-media-size;
@@ -69,4 +63,17 @@ $product-media-size: 40px;
     flex-flow: row-reverse;
     padding-top: spacing('normal');
     padding-left: spacing('normal');
+}
+
+.c-table--select-all {
+    th, td {
+        &:first-child{
+            padding-right: spacing('normal');
+            width: 75px;
+        }
+    }
+}
+
+.c-table--select-all th:first-child input + label {
+    display: none;
 }
