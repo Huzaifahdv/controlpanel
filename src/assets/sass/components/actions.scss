@@ -12,7 +12,8 @@ $indicator-size: 10px;
     align-items: center;
     padding: spacing('extra-small');
     border-bottom: 1px solid rgba(darken($color-brand, 40%), 0.1);
-
+    flex-wrap: wrap;
+    
     .c-btn {
         width: 140px;
     }
