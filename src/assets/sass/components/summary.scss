@@ -3,6 +3,7 @@
     display: inline-flex;
     align-items: center;
     padding: spacing('small') spacing('wide');
+    flex-wrap: wrap;
 }
 
 .c-summary__data {

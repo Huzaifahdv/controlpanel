@@ -1,4 +1,5 @@
 $product-media-size: 40px;
+$bp-table-column: 660px;
 
 .c-table {
     @include e-card;
@@ -77,3 +78,95 @@ $product-media-size: 40px;
 .c-table--select-all th:first-child input + label {
     display: none;
 }
+
+
+@media (max-width: $bp-tablet-small) {
+    .c-table__data {
+        display: flex;
+        overflow-x: auto;
+
+        tbody, thead {
+            display: flex;
+            flex-grow: 1;
+            min-width: max-content;
+        }
+    
+        tr {
+            display: flex;
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-direction: column;
+        }
+    
+        td, th {
+            padding: spacing('extra-small') spacing();
+        }
+
+        th:last-child {
+            flex-grow: 1;
+        }
+    }
+
+    .c-table--select-all th:first-child input + label {
+        display: inline;
+    }
+
+    .c-table--select-all th:nth-child(2) label {
+        display: none;
+    }
+
+    .c-table--select-all {
+        th, td {
+            &:first-child{
+                display: flex;
+                align-items: center;
+                padding-right: spacing();
+                width: initial;
+                input {
+                    margin-left: spacing('extra-small');
+                }
+            }
+        }
+    }
+
+    .c-table--select-all td:first-child {
+        height: floor(13px * $line-height) + 2px;
+        box-sizing: content-box;
+    }
+
+    .c-table--select-all th:nth-child(2) {
+        height: $product-media-size + 2px;
+        box-sizing: content-box;
+    }
+
+    .c-table--select-all th:nth-child(3), .c-table--select-all th:nth-child(1){
+        order: -1;
+    }
+
+    .c-table--select-all th:nth-child(3),
+    .c-table--select-all td:nth-child(2) {
+        border-bottom-color: transparent;
+    }
+
+    .c-list--table-row {
+        width: initial;
+        align-items: flex-start;
+        padding: 0;
+        .c-list__actions {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            border-top: 0;
+            .c-btn {
+                margin-bottom: spacing('small');
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        th, td {
+            width: 100% !important;
+        }
+    }
+}
+

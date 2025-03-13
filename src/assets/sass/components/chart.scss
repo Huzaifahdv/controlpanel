@@ -1,7 +1,7 @@
 .c-chart {
     @include e-card;
     width: 100%;
-    padding-top: spacing('extra-small'); //
+    padding-top: spacing('normal'); //
     .c-table__navigation{   //
         padding-top: 0;
     }
@@ -12,6 +12,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 spacing('normal');
+    flex-wrap: wrap;
+    margin-bottom: spacing('small');
 }
 
 .c-chart__header__title {
