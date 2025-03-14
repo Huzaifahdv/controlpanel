@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" >
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +8,10 @@
 <body>
     <div class="page-container">
         <sidebar></sidebar>
-
         <div class="single-page">
             <header class="page-header">
-                <h1 class="patge-title">إضافة مستخدم</h1>
-                <button class="c-btn c-btn--primary" type="submit" name="submit" form="add-user">مستخدم جديد</button>
+                <h1 class="page-title">إضافة مستخدم</h1>
+                <button class="c-btn c-btn--primary" type="submit" form="add-user" name="submit">مستخدم جديد</button>
             </header>
             <form action="" class="c-form" name="add-user">
                 <div class="c-form__controls">
@@ -28,35 +27,35 @@
                         <span class="c-upload__label c-upload__label--remove js-upload-remove">احذف الصورة</span>
                     </div>
                     <div class="c-form__row">
-                        <div class="c-textfield">
-                            <label for="username" class="c-textfield__label">اسم المستخدم</label>
-                            <input type="text" class="c-textfield__input" placeholder="" id="username" required="required">
-                            <span class="c-textfield__hint"></span>
-                        </div>
+                       <div class="c-textfield">
+                          <label for="username" class="c-textfield__label">اسم المستخدم</label>
+                          <input type="text" class="c-textfield__input" placeholder="" id="username" required="required">
+                          <span class="c-textfield__hint"></span>
+                       </div>
                     </div>
                     <div class="c-form__row">
                         <div class="c-textfield">
-                            <label for="email" class="c-textfield__label">البريد الإلكتروني</label>
-                            <input type="email" class="c-textfield__input c-textfield__input--left" placeholder="" id="email" required="required">
+                            <label for="email" class="c-textfield__label">البريد</label>
+                            <input type="email" class="c-textfield__input" placeholder="" id="email" required="required">
                             <span class="c-textfield__hint"></span>
                         </div>
                         <div class="c-textfield">
-                            <label for="email2" class="c-textfield__label">تأكيد البريد</label>
-                            <input type="email" class="c-textfield__input c-textfield__input--left" placeholder="" id="email2" required="required">
+                            <label for="email-2" class="c-textfield__label">تأكيد البريد</label>
+                            <input type="email" class="c-textfield__input" placeholder="" id="email-2" required="required">
                             <span class="c-textfield__hint"></span>
                         </div>
                     </div>
                     <div class="c-form__row">
                         <div class="c-textfield">
                             <label for="password" class="c-textfield__label">كلمة المرور</label>
-                            <input type="password" placeholder="" class="c-textfield__input" id="password" required="required">
+                            <input type="password" class="c-textfield__input" placeholder="" id="password" required="required">
                             <span class="c-textfield__hint"></span>
                         </div>
                     </div>
                     <div class="c-form__row">
                         <div class="c-textfield">
                             <label for="password-confirm" class="c-textfield__label">تأكيد كلمة المرور</label>
-                            <input type="password" placeholder="" class="c-textfield__input" id="password-confirm" required="required">
+                            <input type="password" class="c-textfield__input" placeholder="" id="password-confirm" required="required">
                             <span class="c-textfield__hint"></span>
                         </div>
                     </div>
